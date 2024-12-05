@@ -1,9 +1,7 @@
 var x : int;
-var y : list<int>;
 var z : int;
 
 x = 10 + 20;
-y = 2;
 z = 4;
 
 function sum(a : int, b : int) int {
@@ -11,6 +9,7 @@ function sum(a : int, b : int) int {
 }
 
 function main() int {
-    x = sum(y, z);
+    x = sum(z, 4);
     print(x);
+    return x;
 }

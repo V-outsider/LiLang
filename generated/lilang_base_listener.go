@@ -128,3 +128,15 @@ func (s *BaseLiLangListener) EnterExpression(ctx *ExpressionContext) {}
 
 // ExitExpression is called when production expression is exited.
 func (s *BaseLiLangListener) ExitExpression(ctx *ExpressionContext) {}
+
+// EnterFunctionCall is called when production functionCall is entered.
+func (s *BaseLiLangListener) EnterFunctionCall(ctx *FunctionCallContext) {}
+
+// ExitFunctionCall is called when production functionCall is exited.
+func (s *BaseLiLangListener) ExitFunctionCall(ctx *FunctionCallContext) {}
+
+// EnterArgList is called when production argList is entered.
+func (s *BaseLiLangListener) EnterArgList(ctx *ArgListContext) {}
+
+// ExitArgList is called when production argList is exited.
+func (s *BaseLiLangListener) ExitArgList(ctx *ArgListContext) {}

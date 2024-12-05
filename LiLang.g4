@@ -50,19 +50,20 @@ statement       : variableDeclaration
                 | switchStatement
                 | returnStatement
                 | listOperation
+                | printCall
                 ;
 
 variableDeclaration : VAR IDENTIFIER COLON type SEMICOLON ;
 
 functionDeclaration : FUNCTION IDENTIFIER LPAREN paramList? RPAREN type block ;
 
-printCall : PRINT LPAREN IDENTIFIER RPAREN;
+printCall : PRINT LPAREN expression RPAREN SEMICOLON ;
 
 paramList        : param (COMMA param)* ;
 param            : IDENTIFIER COLON type (AMPERSAND)? ;
 
 type            : INT
-                | LIST LT type GT  // Определение типа для списков
+                | LIST LT type GT
                 ;
 
 assignment       : IDENTIFIER ASSIGN expression SEMICOLON ;
@@ -90,6 +91,11 @@ expression       : expression PLUS expression
                 | expression MINUS expression
                 | expression MULT expression
                 | expression DIV expression
+                | functionCall
                 | NUMBER
                 | IDENTIFIER
                 | LPAREN expression RPAREN ;
+
+functionCall     : IDENTIFIER LPAREN argList? RPAREN ;
+
+argList          : expression (COMMA expression)* ;

@@ -62,6 +62,12 @@ type LiLangListener interface {
 	// EnterExpression is called when entering the expression production.
 	EnterExpression(c *ExpressionContext)
 
+	// EnterFunctionCall is called when entering the functionCall production.
+	EnterFunctionCall(c *FunctionCallContext)
+
+	// EnterArgList is called when entering the argList production.
+	EnterArgList(c *ArgListContext)
+
 	// ExitProgram is called when exiting the program production.
 	ExitProgram(c *ProgramContext)
 
@@ -115,4 +121,10 @@ type LiLangListener interface {
 
 	// ExitExpression is called when exiting the expression production.
 	ExitExpression(c *ExpressionContext)
+
+	// ExitFunctionCall is called when exiting the functionCall production.
+	ExitFunctionCall(c *FunctionCallContext)
+
+	// ExitArgList is called when exiting the argList production.
+	ExitArgList(c *ArgListContext)
 }
