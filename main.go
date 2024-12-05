@@ -4,6 +4,7 @@ import (
 	"github.com/V-outsider/LiLang/analyzers"
 	"github.com/antlr4-go/antlr/v4"
 
+	"github.com/V-outsider/LiLang/compiler"
 	generated "github.com/V-outsider/LiLang/generated"
 )
 
@@ -25,5 +26,7 @@ func main() {
 
 	antlr.ParseTreeWalkerDefault.Walk(analyzer, tree)
 
+	visitor := &compiler.LiLangVisitor{}
+	// visitor.
 	// fmt.Println(tree.ToStringTree(parser.LiteralNames, parser))
 }
