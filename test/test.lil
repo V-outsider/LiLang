@@ -8,7 +8,15 @@ function sum(a : int, b : int) int {
     return a + b;
 }
 
+function outerFunction(a : int) int {
+    function innerfunc(b: int) int {
+        return a + b;
+    }
+    return innerfunc(a*2);
+}
+
 function main() int {
+    print(x);
     x = sum(z, 4);
     print(x);
     return x;

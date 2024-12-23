@@ -22,3 +22,7 @@ clang -c print.c -o print.o
 
 clang output.o print.o -o output
 clang output.o -o output -lc
+
+# important inside code
+target triple = "arm64-apple-darwin24.1.0"
+target datalayout = "e-m:o-i64:64-i128:128-n32:64-S128"
